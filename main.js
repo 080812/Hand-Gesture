@@ -18,7 +18,7 @@ function takesnapshot(){
 console.log("ml5 version",ml5.version)
 classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/cQJCawRvI/model.json',modelloaded)
 function modelloaded(){
-    console.log(modelloaded)
+    console.log("model is loaded")
 }
 
 function speak(){
@@ -27,5 +27,21 @@ function speak(){
     speakdata2="the second prediction is "+prediction2
     var utterthis=new SpeechSynthesisUtterance(speakdata1+speakdata2)
     synth.speak(utterthis)
+}
+
+function check(){
+    img=document.getElementById('capturedimage')
+classifier.classify(img,gotresult)
+}
+
+function gotresult(results){
+   
+       
+        console.log(results)
+   document.getElementById("resultemotionname").innerHTML=results[0].label 
+   document.getElementById("resultemotionname-2").innerHTML=results[1].label 
+
+   prediction1=results[0].label
+   prediction2=results[1].label
 }
     
