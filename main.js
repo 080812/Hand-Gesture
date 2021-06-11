@@ -38,8 +38,8 @@ function gotresult(results){
    
        
         console.log(results)
-   document.getElementById("resultemotionname").innerHTML=results[0].label 
-   document.getElementById("resultemotionname-2").innerHTML=results[1].label 
+   document.getElementById("resultemotionname1").innerHTML=results[0].label 
+   document.getElementById("resultemotionname2").innerHTML=results[1].label 
 
    prediction1=results[0].label
    prediction2=results[1].label
